@@ -48,9 +48,9 @@ const affichePersonne = document.querySelector('#affichePersonne');
 
 personnes.forEach(personne =>
 {
-    const tr = document.createElement('tr');
+    const tableRow = document.createElement('tr');
 
-    tr.innerHTML =
+    tableRow.innerHTML =
         `
     <td>${personne.prenom}</td>
     <td>${personne.nom}</td>
