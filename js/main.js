@@ -58,5 +58,5 @@ personnes.forEach(personne =>
     <td>${personne.localite}</td>
 `;
 
-    affichePersonne.appendChild(tr);
+    affichePersonne.appendChild(tableRow);
 });
