@@ -37,3 +37,5 @@ const personnes = [
         localite: 'San Francisco',
     }
 ];
+
+const affichePersonne = document.querySelector('#affichePersonne');
