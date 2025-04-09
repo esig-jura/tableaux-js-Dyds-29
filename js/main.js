@@ -49,7 +49,15 @@ const champLocalite = document.getElementById('localite');
 
 formulaire.addEventListener('submit', function(event){
     event.preventDefault(); // Stoppe l'envoi du formulaire
-    console.log(champPrenom.value);
+
+    personnes.push({
+        prenom: champPrenom.value,
+        nom: champNom.value,
+        age: champAge.value,
+        localite: champLocalite.value,
+    });
+
+    affichePersonnes();
 });
 
 // Fonction qui affiche les personnes dans le tableau HTML
