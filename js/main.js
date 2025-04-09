@@ -1,10 +1,10 @@
 /**
- * @author Steve Fallet
- * @since 2022.09.06
+ * @author Dylan Teixeira Batista
+ * @since 2025.04.09
  */
 
 'use strict';
-
+// Déclaration des données
 const personnes = [
     {
         nom: 'Doe',
@@ -13,50 +13,51 @@ const personnes = [
         localite: 'New York',
     },
     {
-        nom: 'Doe',
+        nom: 'Ré',
         prenom: 'Jane',
         age: 30,
         localite: 'Los Angeles',
     },
     {
-        nom: 'Doe',
+        nom: 'Mi',
         prenom: 'Jack',
         age: 28,
         localite: 'Chicago',
     },
     {
-        nom: 'Doe',
+        nom: 'Fa',
         prenom: 'Jill',
         age: 35,
         localite: 'Miami',
     },
     {
-        nom: 'Doe',
+        nom: 'Sol',
         prenom: 'Jim',
         age: 40,
         localite: 'San Francisco',
-    },
-    {
-        nom: 'Gasser',
-        prenom: 'Morgan',
-        age: 56,
-        localite: 'Miami',
     }
 ];
 
-const affichePersonne = document.querySelector('#affichePersonne');
+// Récupération des éléments HTML
+const tableBodyPersonnes = document.querySelector('.personnes'); // Corps du tableau
+console.log(tableBodyPersonnes);
 
-personnes.forEach(personne =>
-{
-    const tableRow = document.createElement('tr');
+// Fonction qui affiche les personnes dans le tableau HTML
+function affichePersonnes () {
+    // Vider le tableau
+    tableBodyPersonnes.innerHTML = '';
+    // Créer une ligne pour chaque personne
+    for (let pers of personnes) {
+        tableBodyPersonnes.innerHTML += `
+            <tr>
+                <td>${pers.prenom}</td>
+                <td>${pers.nom}</td>
+                <td>${pers.age}</td>
+                <td>${pers.localite}</td>
+            </tr>`;
+    }
+    console.log(tableBodyPersonnes.innerHTML);
+}
 
-    tableRow.innerHTML =
-        `
-    <td>${personne.prenom}</td>
-    <td>${personne.nom}</td>
-    <td>${personne.age}</td>
-    <td>${personne.localite}</td>
-`;
-
-    affichePersonne.appendChild(tableRow);
-});
+// Appel de la fonction pour afficher les personnes
+affichePersonnes();
