@@ -45,10 +45,13 @@ const champPrenom = document.getElementById('prenom');
 const champNom = document.getElementById('nom');
 const champAge = document.getElementById('age');
 const champLocalite = document.getElementById('localite');
+const champRechercher =document.getElementById('rechercher');
 
 // Déclaration des fonctions
 // Fonction qui affiche les personnes dans le tableau HTML
 function affichePersonnes () {
+    let recherche = champRechercher.value.trim().toLowerCase();
+    let personnesTrouvees = personnes;
     // Vider le tableau
     tableBodyPersonnes.innerHTML = '';
     // Créer une ligne pour chaque personne
@@ -91,6 +94,7 @@ function ajouterNouvellePersonne (event) {
 
 // Gestion des événements
 formulaire.addEventListener('submit', ajouterNouvellePersonne);
+champRechercher.addEventListener('input', affichePersonnes);
 
 // Initialisation de l'application
 affichePersonnes();
