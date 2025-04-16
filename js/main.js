@@ -67,7 +67,7 @@ function ajouterNouvellePersonne (event) {
 
     let nom = champNom.value.trim();
     let prenom = champPrenom.value.trim();
-    let age = champAge.value.trim();
+    let age = parseInt(champAge.value);
     let localite = champLocalite.value.trim();
 
     if(!nom || !prenom || !age || !localite)
