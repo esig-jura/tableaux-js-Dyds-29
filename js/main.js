@@ -65,6 +65,12 @@ function affichePersonnes () {
 function ajouterNouvellePersonne (event) {
     event.preventDefault(); // Stoppe l'envoi du formulaire
 
+    if (champPrenom.value.trim() === "")
+    {
+        alert("Erreur");
+        return;
+    }
+
 // Ajoute une nouvelle personne à la fin du tableau
     personnes.push({
         prenom: champPrenom.value,
