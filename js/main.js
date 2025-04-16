@@ -50,12 +50,15 @@ const champRechercher =document.getElementById('rechercher');
 // Déclaration des fonctions
 // Fonction qui affiche les personnes dans le tableau HTML
 function affichePersonnes () {
+
     let recherche = champRechercher.value.trim().toLowerCase();
-    let personnesTrouvees = personnes;
+    let personnesTrouvees = personnes.filter(pers => pers.prenom.toLowerCase().includes(recherche));
+    console.log(recherche);
+
     // Vider le tableau
     tableBodyPersonnes.innerHTML = '';
     // Créer une ligne pour chaque personne
-    for (let pers of personnes) {
+    for (let pers of personnesTrouvees) {
         tableBodyPersonnes.innerHTML += `
             <tr>
                 <td>${pers.prenom}</td>
