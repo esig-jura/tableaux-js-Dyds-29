@@ -65,18 +65,24 @@ function affichePersonnes () {
 function ajouterNouvellePersonne (event) {
     event.preventDefault(); // Stoppe l'envoi du formulaire
 
-    if (champPrenom.value.trim() === "")
+    let nom = champNom.value.trim();
+    let prenom = champPrenom.value.trim();
+    let age = champAge.value.trim();
+    let localite = champLocalite.value.trim();
+
+    if(!nom || !prenom || !age || !localite)
     {
-        alert("Erreur");
-        return;
+       alert('C\'est faut batard');
+       return;
     }
+
 
 // Ajoute une nouvelle personne à la fin du tableau
     personnes.push({
-        prenom: champPrenom.value,
-        nom: champNom.value,
-        age: champAge.value,
-        localite: champLocalite.value
+        prenom: prenom,
+        nom: nom,
+        age: age,
+        localite: localite
     });
 
 // Réafficher le tableau avec la nouvelle personne
